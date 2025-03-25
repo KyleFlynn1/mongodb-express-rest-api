@@ -8,6 +8,7 @@ This repository contains the sample application for the [MongoDB and Express.js 
 Then, set the Atlas URI connection parameter in `server/.env` to your Connection String:
 ```
 ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongodb://atlas-sql-67d98cb6e2fe6a613e90076d-s7fhv.a.query.mongodb.net/wp1?ssl=true&authSource=admin
 ```
 
 2. Start the Express server:

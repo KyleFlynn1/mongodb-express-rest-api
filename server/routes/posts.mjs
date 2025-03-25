@@ -17,14 +17,13 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   let id=req.params.id
   console.log(id)
-  //id=id.slice(1) //remove the colon at the start 
   let collection = await db.collection("cars");
   let query = {_id: ObjectId(id)};
-
   let result = await collection.findOne(query);
-
-  if (!result) res.send("Not found").status(404);
-  else res.send(result).status(200);
+  if (!result) 
+    res.send("Not found").status(404);
+  else 
+    res.send(result).status(200);
 });
 
 // Add a new document to the collection
@@ -39,14 +38,15 @@ router.post("/", async (req, res) => {
 // Delete an entry
 router.delete("/:id", async (req, res) => {
   let id=req.params.id
-  //id=id.slice(1) //remove the colon at the start 
-
+  console.log("del : " + id)
   const query = { _id: ObjectId(id) };
 
   const collection = db.collection("cars");
+  console.log(query);
   let result = await collection.deleteOne(query);
 
   res.send(result).status(200);
+
 });
 
 export default router;
